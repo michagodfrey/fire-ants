@@ -1,0 +1,211 @@
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #FFE4DC;
+}
+
+/* image source: https://www.dpi.nsw.gov.au/about-us/media-centre/releases/2019/hay-watch-out-for-fire-ants */
+
+.banner {
+  background-image: url("images/red-imported-fire-ant.jpg");
+  background-position: center;
+  background-size: contain;
+  color: #fff;
+  height: 400px;
+}
+
+.mask {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 400px;
+  width: 100%;
+}
+
+.grid-container {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
+  grid-gap: 10px;
+  grid-template-areas:
+    "about"
+    "video"
+    "outbreak"
+    "map"
+    "biosecurity";
+}
+
+.about {
+  grid-area: about;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+span {
+  font-weight: bold;
+}
+
+.video {
+  grid-area: video;
+  display: flex;
+  margin-top: 15px;
+}
+
+iframe {
+  margin: 0 auto;
+  width: 380px;
+  height: 200px;
+}
+
+
+.outbreak {
+  grid-area: outbreak;
+  padding: 15px;
+  display: flex;
+}
+
+.map {
+  grid-area: map;
+  padding: 15px;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.w3-image {
+  max-width: 360px;
+}
+
+.biosecurity {
+  grid-area: biosecurity;
+  padding: 15px;
+
+}
+
+footer {
+  background-color: #7F0000;
+
+}
+
+/* Media Queries */
+
+@media (min-width: 576px) {
+
+  iframe {
+    width: 420px;
+    height: 236px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .grid-container {
+    grid-template-columns: 50%;
+    grid-template-areas:
+    "about about"
+    "video video"
+    "outbreak map"
+    "biosecurity biosecurity";
+  }
+
+  iframe {
+    width: 630px;
+    height: 354px;
+  }
+
+  .w3-image {
+    max-width: 280px;
+  }
+
+  .text-container {
+    padding: 5px;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+    "about about video video video video"
+    "about about outbreak outbreak outbreak outbreak"
+    "map map map biosecurity biosecurity biosecurity"
+  }
+
+  .about {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .video {
+    grid-column-start: 3;
+    grid-column-end: 7;
+  }
+
+  .outbreak {
+    grid-column-start: 3;
+    grid-column-end: 7;
+
+  }
+
+  .map {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .biosecurity {
+    grid-column-start: 3;
+    grid-column-end: 7;
+  }
+
+
+  iframe {
+    width: 840px;
+    height: 472px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+    "about about video video video video"
+    "outbreak outbreak map map biosecurity biosecurity"
+  }
+
+  .about {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .video {
+    grid-column-start: 3;
+    grid-column-end: 7;
+  }
+
+  .outbreak {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+  }
+
+  .map {
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+
+  .biosecurity {
+    grid-column-start: 5;
+    grid-column-end: 7;
+  }
+
+}
